@@ -1,13 +1,8 @@
 var express = require('express');
-var socket  = require('socket.io');
 
 var db = require('./database');
 
 const PORT = 9001; 
-
-//For shoptimer xD
-var timerID;
-var isTimerRunning = false;
 
 //App
 var app = express();
@@ -80,7 +75,7 @@ app.post('/movieRatings', async function (req, res) {
     }
 });
 
-
+//#region Dump
 // Socket setup & pass server
 // var io = socket(server);
 // io.on('connection', (socket) => {
@@ -167,3 +162,5 @@ app.post('/movieRatings', async function (req, res) {
 
 //     }); 
 //});
+
+//#endregion Dump

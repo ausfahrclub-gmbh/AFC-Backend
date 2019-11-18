@@ -2,8 +2,8 @@ var oracledb = require('oracledb');
 
 const DataProcessor = require('./dataprocessor');
 
-var dbuser = 'C##AFC'
-var mypw = 'passme'  // set mypw to the hr schema password
+var dbuser = 'AFC'
+var mypw = 'AFCDaten!'  // set mypw to the hr schema password
 var constrnig = 'localhost:1521/xe'
 
 
@@ -143,7 +143,7 @@ module.exports = {
 
         console.log(body);
 
-        const insertSql = "INSERT INTO AFC_MOVIE_RATING(id,username,movie,starrating,usercomment,fellAsleep) values (:i, :u, :m, :s, :c, :f)";
+        const insertSql = "INSERT INTO AFC_MOVIE_RATING(id,username,movie,starrating,comments,fellAsleep) values (:i, :u, :m, :s, :c, :f)";
 
         const binds = 
             { i: null, u: user, m: movie, s: starRating, c: comment, f: fellAsleep }
