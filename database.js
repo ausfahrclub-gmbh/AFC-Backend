@@ -3,7 +3,7 @@ var oracledb = require('oracledb');
 const DataProcessor = require('./dataprocessor');
 
 var dbuser = 'AFC'
-var mypw = 'AFCDaten!'  // set mypw to the hr schema password
+var mypw = 'passme'  // set mypw to the hr schema password
 var constrnig = 'localhost:1521/xe'
 
 
@@ -52,7 +52,7 @@ module.exports = {
 
         console.log(body);
 
-        const insertSql = "INSERT INTO AFC_MOVIE(moviename,genre,length,releasedate,cinema) values (:m, :g, :l, TO_DATE(:r, 'YYYY-MM-DD'), :c)";
+        const insertSql = "INSERT INTO AFC_MOVIE(moviename,genre,lenght,releasedate,cinema) values (:m, :g, :l, TO_DATE(:r, 'YYYY-MM-DD'), :c)";
 
         const binds = 
             { m: movieName, g: genre, l: length, r: releaseDate, c: cinema }
